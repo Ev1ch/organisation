@@ -1,0 +1,22 @@
+@mixin button-animation ($color)
+    overflow: hidden
+    position: relative
+
+    &::before
+        transition: .3s
+        z-index: 0
+        content: ''
+        position: absolute
+        display: block
+        width: 0%
+        left: 50%
+        top: 0
+        height: 100%
+        transform: skew(-20deg);
+        background: $color
+
+    &:hover
+
+        &::before
+            left: -15%
+            width: 130%
