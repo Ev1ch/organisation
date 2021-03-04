@@ -1,7 +1,9 @@
 <template>
     <Navbar />
 
-    <header class="header"></header>
+    <header class="header">
+        <div class="header__carosel"></div>
+    </header>
 
     <section class="section">
         <div class="container">

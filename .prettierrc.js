@@ -1,5 +1,7 @@
+const config = require('prettier-airbnb-config');
+
 module.exports = {
-    ...require('prettier-airbnb-config'),
+    ...config,
     tabWidth: 4,
     arrowParens: 'always',
     bracketSpacing: true,
