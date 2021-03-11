@@ -1,14 +1,42 @@
+<template>
+    <div class="event">
+        <img src="http://via.placeholder.com/500x300/" alt="" class="event__image" />
+        <div class="event__overlay">
+            <div class="event__content">
+                <div class="event__description">
+                    <p class="event__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis tempora
+                        quisquam commodi et, voluptatem magnam sequi reiciendis error.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <span class="event__title">Name</span>
+    </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="sass">
+@import '../assets/sass/main.sass'
+
 .event
+    transition: .3s
     position: relative
-    width: 24%
+    flex-basis: 33.34%
+    height: 300px
 
     &:hover
+        flex-basis: 50%;
 
         .event__title
             z-index: 0
             opacity: 0
 
         .event__description
+            transition-delay: .3s
             opacity: 1
 
         .event__overlay
@@ -23,16 +51,11 @@
                     left: 0
                     top: 0
 
-    &--expand
-        width: 38%
-
-    &:hover &__overlay
-        opacity: 1
-
     &__image
-        display: block
+        object-fit: cover
         width: 100%
         height: 100%
+        display: block
 
     &__overlay
         z-index: 0
@@ -65,7 +88,6 @@
             border: 1px solid #c4c4c4
 
     &__description
-        transition: .3s
         opacity: 0
         padding: 22px
         text-align: center
@@ -92,3 +114,4 @@
         text-transform: uppercase
         font-size: 22px;
         font-weight: 400;
+</style>
