@@ -4,7 +4,7 @@ import Home from '../views/Home.vue';
 const routes = [
     {
         path: '/',
-        name: 'Головна',
+        name: 'Home',
         component: Home,
         meta: { title: 'Головна' },
     },
