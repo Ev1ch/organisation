@@ -14,22 +14,32 @@
         margin-left: auto
 
     &__list
+        position: relative
+        z-index: 2
         margin: 0
-        align-items: center
         padding: 0
         list-style: none
         display: flex
+        align-items: space-between
 
         &--dropdown
-            transition: .3s
+            transition: $animation-time
             left: 0
-            height: 0
+            display: none
             padding: 0
             margin: 0
             list-style-type: none
             background: #0f0f0f
             position: absolute
+            overflow: hidden
             top: 100%
+            animation: slideDown $animation-time
+
+        @keyframes slideDown
+            from
+                height: 0
+            to
+                height: 100%
 
     &__item
         padding: 13px
@@ -42,18 +52,18 @@
                 transition: .2s
                 margin-left: 8px
                 content: ''
-                border: solid #fff;
-                border-width: 0 2px 2px 0;
-                display: inline-block;
-                padding: 3px;
-                transform: rotate(-45deg);
+                border: solid #fff
+                border-width: 0 2px 2px 0
+                display: inline-block
+                padding: 3px
+                transform: rotate(-45deg)
 
             &:hover::after
-                transform: rotate(45deg);
+                transform: rotate(45deg)
 
         &:hover
             .navbar__list--dropdown
-                height: 100%
+                display: block
 
     &__link
         text-decoration: none

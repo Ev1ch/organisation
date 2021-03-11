@@ -1,7 +1,7 @@
 @import '../components/Navbar'
 @import '../components/Footer'
-@import '../components/NewsPost'
-@import '../components/Event'
+@import '../components/HomeNewsPost'
+@import '../components/HomeEvent'
 
 .section, .header
     margin-bottom: 76px
@@ -32,6 +32,71 @@
             height: 2px
             background: #050505
 
+.header
+
+    &__button
+        display: inline-block
+        margin-top: 42px
+        border: 4px solid #FFDF8D
+        border-radius: 2px
+        @include button-animation(#FFDF8D)
+
+    &__link
+        text-decoration: none
+        position: relative
+        z-index: 1
+        color: #FFDF8D
+        font-family: 'Roboto', sans-serif
+        display: inline-block
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 22px
+        padding: 20px 40px
+
+        &:hover
+            color: #fff
+
+    .vueperslides
+
+        &__bullet
+
+            .default
+                background: #fff
+                border: none
+                border-radius: 0
+                box-shadow: none
+                width: 83px
+                height: 6px
+                opacity: 0.8
+
+            &--active
+                background: #232222
+
+        &--fixed-height
+            height: 700px
+
+    .vueperslide
+
+        &:hover
+            .vueperslide__content-wrapper
+                backdrop-filter: blur(0.2px)
+
+        &__content-wrapper
+            transition: $animation-time
+            backdrop-filter: blur(5px) grayscale(.5)
+
+        &__title
+            line-height: 1.5
+            width: 70%
+            font-size: 28px
+            color: #fff
+            font-weight: 700
+            font-family: 'Noto Serif', serif
+
+        &__subtitle
+            margin-top: 40px
+            text-align: right
+
 .activity
     display: flex
 
@@ -55,7 +120,7 @@
     flex-wrap: wrap
 
     &__button
-        margin-top: 60px;
+        margin-top: 60px
         display: inline-block
         border: 1px solid #000
 
@@ -77,6 +142,7 @@
 
 .events
     display: flex
+    justify-content: center
 
 .social
     display: flex
@@ -88,10 +154,10 @@
     background: #eaeaea
 
     &__title
-        color: #2c3673;
-        font-family: 'Inter', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
+        color: #2c3673
+        font-family: 'Inter', sans-serif
+        font-size: 20px
+        font-weight: 700
         text-align: center
 
     &-form
@@ -107,10 +173,10 @@
             width: 325px
 
         &__title
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #3e3e40;
+            font-family: 'Inter', sans-serif
+            font-size: 18px
+            font-weight: 700
+            color: #3e3e40
 
         &__input
             box-sizing: border-box
@@ -118,8 +184,8 @@
             color: #000
             padding: 16px
             border-radius: 8px
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
+            font-family: 'Inter', sans-serif
+            font-size: 16px
             font-weight: 600
             margin-top: 35px
             border: none

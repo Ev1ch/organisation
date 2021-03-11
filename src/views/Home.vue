@@ -2,7 +2,17 @@
     <Navbar />
 
     <header class="header">
-        <div class="header__carosel"></div>
+        <div class="header__carosel">
+            <vueper-slides :fixed-height="true" class="no-shadow">
+                <vueper-slide
+                    v-for="(slide, i) in slides"
+                    :key="i"
+                    :title="slide.title"
+                    :content="slide.content"
+                    :image="slide.image"
+                />
+            </vueper-slides>
+        </div>
     </header>
 
     <section class="section">
@@ -32,10 +42,10 @@
         <div class="container">
             <div class="section__header"><h2 class="section__title">Останні новини</h2></div>
             <div class="news">
-                <NewsPost />
-                <NewsPost />
-                <NewsPost />
-                <NewsPost />
+                <HomeNewsPost />
+                <HomeNewsPost />
+                <HomeNewsPost />
+                <HomeNewsPost />
             </div>
             <div class="news__button">
                 <a class="news__link" href="">Більше подій</a>
@@ -46,9 +56,9 @@
     <section class="section">
         <div class="section__header"><h2 class="section__title">Наші заходи</h2></div>
         <div class="events">
-            <Event class="event--expand" />
-            <Event />
-            <Event class="event--expand" />
+            <HomeEvent />
+            <HomeEvent />
+            <HomeEvent />
         </div>
     </section>
 
@@ -59,7 +69,7 @@
                 <div class="join__header">
                     <span class="join__title">Заповніть заявку</span>
                     <p class="join__description">
-                        ЩОБ ДОЛУЧИТИСЬ ДО НАШОЇ ОРГАНІЗАЦІЇ, ЗАПОВНІТЬ НАСТУПНІ ПОЛЯ
+                        Щоб долучитись до нашої організації, заповніть наступні поля
                     </p>
                 </div>
                 <div class="join-form">
@@ -120,15 +130,44 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import NewsPost from '@/components/NewsPost.vue';
-import Event from '@/components/Event.vue';
+import HomeNewsPost from '@/components/HomeNewsPost.vue';
+import HomeEvent from '@/components/HomeEvent.vue';
+import { VueperSlides, VueperSlide } from 'vueperslides';
+import 'vueperslides/dist/vueperslides.css';
 
 export default {
     components: {
         Navbar,
         Footer,
-        NewsPost,
-        Event,
+        HomeNewsPost,
+        HomeEvent,
+        VueperSlides,
+        VueperSlide,
     },
+    data: () => ({
+        slides: [
+            {
+                title:
+                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
+                content:
+                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+            },
+            {
+                title:
+                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
+                content:
+                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+            },
+            {
+                title:
+                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
+                content:
+                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+            },
+        ],
+    }),
 };
 </script>
