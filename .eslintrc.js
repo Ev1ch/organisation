@@ -9,6 +9,7 @@ module.exports = {
     },
     rules: {
         indent: ['error', 4],
+        'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     },
