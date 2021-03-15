@@ -3,7 +3,7 @@
         <div class="container footer__container">
             <div class="footer__logo">
                 <img
-                    src="https://via.placeholder.com/50/"
+                    src="../assets/img/logo.png"
                     alt="Логотип “Молодий Народний Рух“"
                     class="footer__image"
                 />
@@ -48,3 +48,7 @@
 <script>
 export default {};
 </script>
+
+<style lang="sass">
+@import '../assets/sass/components/Footer'
+</style>

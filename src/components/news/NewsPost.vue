@@ -1,10 +1,13 @@
 <template>
     <div class="news-post">
         <img :src="require(`../../assets/img/${image}`)" alt="" class="news-post__image" />
+        <div class="news-post__header">
+            <span class="news-post__title">{{ title }}</span>
+        </div>
         <div class="news-post__overlay">
             <div class="news-post__content">
                 <div class="news-post__description">
-                    <span class="news-post__title">{{ header }}</span>
+                    <span class="news-post__subtitle">{{ subtitle }}</span>
                     <p class="news-post__text">
                         {{ text }}
                     </p>
@@ -21,6 +24,7 @@
 export default {
     props: {
         title: String,
+        subtitle: String,
         text: String,
         link: String,
         image: String,
@@ -29,5 +33,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import '../../assets/sass/components/home/NewsPost'
+@import '../../assets/sass/components/news/NewsPost'
 </style>

@@ -24,3 +24,7 @@ export default {
     },
 };
 </script>
+
+<style lang="sass">
+@import '../../assets/sass/components/home/Event'
+</style>

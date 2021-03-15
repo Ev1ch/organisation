@@ -1,7 +1,5 @@
-@import '../components/Navbar'
-@import '../components/Footer'
-@import '../components/HomeNewsPost'
-@import '../components/HomeEvent'
+@import '../../node_modules/vueperslides/dist/vueperslides.css'
+@import '../global'
 
 .section, .header
     margin-bottom: 76px
@@ -79,11 +77,11 @@
 
         &:hover
             .vueperslide__content-wrapper
-                backdrop-filter: blur(.5px) grayscale(.5)
+                backdrop-filter: blur(.5px)
 
         &__content-wrapper
             transition: $animation-time
-            backdrop-filter: blur(1px) grayscale(.5)
+            backdrop-filter: blur(1px)
 
         &__title
             line-height: 1.5
