@@ -8,7 +8,7 @@
                     v-for="(slide, i) in slides"
                     :key="i"
                     :title="slide.title"
-                    :content="slide.content"
+                    :text="slide.text"
                     :image="slide.image"
                 />
             </vueper-slides>
@@ -20,7 +20,7 @@
             <div class="section__header"><h2 class="section__title">Наша діяльність</h2></div>
             <div class="activity">
                 <div class="activity__logo">
-                    <img src="https://via.placeholder.com/500/" alt="" class="activity__image" />
+                    <img src="../assets/img/home/activity.jpg" alt="" class="activity__image" />
                 </div>
                 <div class="activity__description">
                     <p class="activity__text">
@@ -42,10 +42,14 @@
         <div class="container">
             <div class="section__header"><h2 class="section__title">Останні новини</h2></div>
             <div class="news">
-                <HomeNewsPost />
-                <HomeNewsPost />
-                <HomeNewsPost />
-                <HomeNewsPost />
+                <NewsPost
+                    v-for="(newspost, i) in news"
+                    :key="i"
+                    :title="newspost.title"
+                    :text="newspost.text"
+                    :link="newspost.link"
+                    :image="newspost.image"
+                />
             </div>
             <div class="news__button">
                 <a class="news__link" href="">Більше подій</a>
@@ -56,9 +60,14 @@
     <section class="section">
         <div class="section__header"><h2 class="section__title">Наші заходи</h2></div>
         <div class="events">
-            <HomeEvent />
-            <HomeEvent />
-            <HomeEvent />
+            <Event
+                v-for="(event, i) in events"
+                :key="i"
+                :title="event.title"
+                :text="event.text"
+                :link="event.link"
+                :image="event.image"
+            />
         </div>
     </section>
 
@@ -97,10 +106,8 @@
                             placeholder="&#xf095;  +38 (0--) -- ---"
                         />
                     </div>
-                    <div class="join-form__area">
-                        <div class="join__button">
-                            <a href="" class="join__link">Надіслати</a>
-                        </div>
+                    <div class="join__button">
+                        <a href="" class="join__link">Надіслати</a>
                     </div>
                 </div>
             </div>
@@ -130,8 +137,8 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import HomeNewsPost from '@/components/HomeNewsPost.vue';
-import HomeEvent from '@/components/HomeEvent.vue';
+import NewsPost from '@/components/home/NewsPost.vue';
+import Event from '@/components/home/Event.vue';
 import { VueperSlides, VueperSlide } from 'vueperslides';
 import 'vueperslides/dist/vueperslides.css';
 
@@ -139,31 +146,62 @@ export default {
     components: {
         Navbar,
         Footer,
-        HomeNewsPost,
-        HomeEvent,
+        NewsPost,
+        Event,
         VueperSlides,
         VueperSlide,
     },
     data: () => ({
+        news: [
+            {
+                title: 'Нація',
+                text:
+                    'До Української Нації належить кожна людина, що відчуває в собі культурний, духовний, історичний зв’язок з Україною, минулими, сьогоднішніми і прийдешніми поколіннями українців. Нація ґрунтується на єдності мети і мрії, на бажанні спільно будувати свою долю. ',
+                link: '',
+                image: 'news/news_1.jpg',
+            },
+            {
+                title: '',
+                text: '',
+                link: '',
+                image: 'news/news_2.jpg',
+            },
+            {
+                title: '',
+                text: '',
+                link: '',
+                image: 'news/news_3.jpg',
+            },
+            {
+                title: '',
+                text: '',
+                link: '',
+                image: 'news/news_4.jpg',
+            },
+        ],
+        events: [
+            {
+                title: 'Табори',
+                text:
+                    "- Всеукраїнський табір «Говерляна» імені В'ячеслава Чорновола - це традиційне молодорухівське таборування біля підніжжя гори Говерла, на яке щорічно збираються молоді українці із більшості областей України.",
+                image: 'events/event_1.jpg',
+            },
+            {
+                title: 'Фестивалі',
+                text: '',
+                image: 'events/event_2.jpg',
+            },
+            {
+                title: 'Громадські зібрання',
+                text: '',
+                image: 'events/event_3.jpg',
+            },
+        ],
         slides: [
             {
                 title:
                     '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
-                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
-                content:
-                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
-            },
-            {
-                title:
-                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
-                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
-                content:
-                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
-            },
-            {
-                title:
-                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
-                image: 'https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg?w=1800',
+                image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
                 content:
                     '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
             },
@@ -171,3 +209,7 @@ export default {
     }),
 };
 </script>
+
+<style lang="sass">
+@import '../assets/sass/views/Home'
+</style>
