@@ -1,0 +1,44 @@
+@import '../../variables'
+
+.news-navbar
+    margin-bottom: 76px
+
+    &__list
+        justify-content: space-around
+        margin: 0 auto
+        list-style: none
+        padding: 0
+        display: flex
+
+    &__item
+
+        &--active
+
+            .news-navbar__link
+
+                &::before
+                    width: 120%
+
+    &__link
+        text-decoration: none
+        position: relative
+        color: #000
+        font-family: 'Roboto', sans-serif
+        font-size: 24px
+        font-weight: 700
+
+        &::before
+            transition: $animation-time
+            position: absolute
+            content: ''
+            display: block
+            width: 0
+            top: calc(100% + 4px)
+            left: -10%
+            height: 1px
+            background: #000
+
+        &:hover
+
+            &::before
+                width: 120%

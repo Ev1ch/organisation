@@ -44,6 +44,6 @@
 export default {};
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import '../assets/sass/components/Navbar'
 </style>

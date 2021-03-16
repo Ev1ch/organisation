@@ -2,17 +2,7 @@
     <Navbar />
 
     <header class="header">
-        <div class="header__carosel">
-            <vueper-slides :fixed-height="true" class="no-shadow">
-                <vueper-slide
-                    v-for="(slide, i) in slides"
-                    :key="i"
-                    :title="slide.title"
-                    :text="slide.text"
-                    :image="slide.image"
-                />
-            </vueper-slides>
-        </div>
+        <Slider :slides="slides" />
     </header>
 
     <section class="section">
@@ -139,8 +129,7 @@ import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 import NewsPost from '@/components/home/NewsPost.vue';
 import Event from '@/components/home/Event.vue';
-import { VueperSlides, VueperSlide } from 'vueperslides';
-import 'vueperslides/dist/vueperslides.css';
+import Slider from '@/components/home/Slider.vue';
 
 export default {
     components: {
@@ -148,8 +137,7 @@ export default {
         Footer,
         NewsPost,
         Event,
-        VueperSlides,
-        VueperSlide,
+        Slider,
     },
     data: () => ({
         news: [
@@ -205,11 +193,18 @@ export default {
                 content:
                     '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
             },
+            {
+                title:
+                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
+                content:
+                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+            },
         ],
     }),
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import '../assets/sass/views/Home'
 </style>

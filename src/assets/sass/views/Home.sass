@@ -1,4 +1,5 @@
-@import '../../node_modules/vueperslides/dist/vueperslides.css'
+@import '../mixins'
+@import '../variables'
 @import '../global'
 
 .section, .header
@@ -53,47 +54,6 @@
 
         &:hover
             color: #fff
-
-    .vueperslides
-
-        &__bullet
-
-            .default
-                background: #fff
-                border: none
-                border-radius: 0
-                box-shadow: none
-                width: 83px
-                height: 6px
-                opacity: 0.8
-
-            &--active
-                background: #232222
-
-        &--fixed-height
-            height: 700px
-
-    .vueperslide
-
-        &:hover
-            .vueperslide__content-wrapper
-                backdrop-filter: blur(.5px)
-
-        &__content-wrapper
-            transition: $animation-time
-            backdrop-filter: blur(1px)
-
-        &__title
-            line-height: 1.5
-            width: 70%
-            font-size: 28px
-            color: #fff
-            font-weight: 700
-            font-family: 'Noto Serif', serif
-
-        &__subtitle
-            margin-top: 40px
-            text-align: right
 
 .activity
     display: flex

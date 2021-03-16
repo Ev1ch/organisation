@@ -3,5 +3,6 @@
 </template>
 
 <style lang="sass">
-@import '@/assets/sass/main'
+@import '@/assets/sass/normalize'
+@import '@/assets/sass/fonts'
 </style>
