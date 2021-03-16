@@ -139,69 +139,71 @@ export default {
         Event,
         Slider,
     },
-    data: () => ({
-        news: [
-            {
-                title: 'Нація',
-                text:
-                    'До Української Нації належить кожна людина, що відчуває в собі культурний, духовний, історичний зв’язок з Україною, минулими, сьогоднішніми і прийдешніми поколіннями українців. Нація ґрунтується на єдності мети і мрії, на бажанні спільно будувати свою долю. ',
-                link: '',
-                image: 'news/news_1.jpg',
-            },
-            {
-                title: '',
-                text: '',
-                link: '',
-                image: 'news/news_2.jpg',
-            },
-            {
-                title: '',
-                text: '',
-                link: '',
-                image: 'news/news_3.jpg',
-            },
-            {
-                title: '',
-                text: '',
-                link: '',
-                image: 'news/news_4.jpg',
-            },
-        ],
-        events: [
-            {
-                title: 'Табори',
-                text:
-                    "- Всеукраїнський табір «Говерляна» імені В'ячеслава Чорновола - це традиційне молодорухівське таборування біля підніжжя гори Говерла, на яке щорічно збираються молоді українці із більшості областей України.",
-                image: 'events/event_1.jpg',
-            },
-            {
-                title: 'Фестивалі',
-                text: '',
-                image: 'events/event_2.jpg',
-            },
-            {
-                title: 'Громадські зібрання',
-                text: '',
-                image: 'events/event_3.jpg',
-            },
-        ],
-        slides: [
-            {
-                title:
-                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
-                image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
-                content:
-                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
-            },
-            {
-                title:
-                    '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
-                image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
-                content:
-                    '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
-            },
-        ],
-    }),
+    data() {
+        return {
+            news: [
+                {
+                    title: 'Нація',
+                    text:
+                        'До Української Нації належить кожна людина, що відчуває в собі культурний, духовний, історичний зв’язок з Україною, минулими, сьогоднішніми і прийдешніми поколіннями українців. Нація ґрунтується на єдності мети і мрії, на бажанні спільно будувати свою долю. ',
+                    link: '',
+                    image: 'news/news_1.jpg',
+                },
+                {
+                    title: '',
+                    text: '',
+                    link: '',
+                    image: 'news/news_2.jpg',
+                },
+                {
+                    title: '',
+                    text: '',
+                    link: '',
+                    image: 'news/news_3.jpg',
+                },
+                {
+                    title: '',
+                    text: '',
+                    link: '',
+                    image: 'news/news_4.jpg',
+                },
+            ],
+            events: [
+                {
+                    title: 'Табори',
+                    text:
+                        "- Всеукраїнський табір «Говерляна» імені В'ячеслава Чорновола - це традиційне молодорухівське таборування біля підніжжя гори Говерла, на яке щорічно збираються молоді українці із більшості областей України.",
+                    image: 'events/event_1.jpg',
+                },
+                {
+                    title: 'Фестивалі',
+                    text: '',
+                    image: 'events/event_2.jpg',
+                },
+                {
+                    title: 'Громадські зібрання',
+                    text: '',
+                    image: 'events/event_3.jpg',
+                },
+            ],
+            slides: [
+                {
+                    title:
+                        '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                    image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
+                    content:
+                        '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+                },
+                {
+                    title:
+                        '«Ти вирішив, що так, а не інакше потрібно діяти. Віриш у свою дорогу?  Іди і не звертай!..» <p class="vueperslide__subtitle">В.Чорновіл</p>',
+                    image: require('@/assets/img/events/event_1.jpg'), // eslint-disable-line global-require
+                    content:
+                        '<div class="header__button"><a href="#" class="header__link">Долучитися</a></div>',
+                },
+            ],
+        };
+    },
 };
 </script>
 

@@ -2,7 +2,8 @@
     <div class="news-post">
         <img :src="require(`../../assets/img/${image}`)" alt="" class="news-post__image" />
         <div class="news-post__header">
-            <span class="news-post__title">{{ title }}</span>
+            <p class="news-post__title">{{ title }}</p>
+            <p class="news-post__views"><i class="far fa-eye"></i>{{ views }}</p>
         </div>
         <div class="news-post__overlay">
             <div class="news-post__content">
@@ -28,6 +29,7 @@ export default {
         text: String,
         link: String,
         image: String,
+        views: Number,
     },
 };
 </script>

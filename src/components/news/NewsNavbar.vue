@@ -2,20 +2,24 @@
     <nav class="news-navbar">
         <ul class="news-navbar__list">
             <li class="news-navbar__item news-navbar__item--active">
-                <router-link to="" class="news-navbar__link">події</router-link>
+                <router-link to="/news/events" class="news-navbar__link">події</router-link>
             </li>
             <li class="news-navbar__item">
-                <router-link to="" class="news-navbar__link">збори</router-link>
+                <router-link to="/news/meetings" class="news-navbar__link">збори</router-link>
             </li>
             <li class="news-navbar__item">
-                <router-link to="" class="news-navbar__link">табір</router-link>
+                <router-link to="/news/camps" class="news-navbar__link">табір</router-link>
             </li>
         </ul>
     </nav>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        activeLink: Number,
+    },
+};
 </script>
 
 <style lang="sass" scoped>

@@ -1,19 +1,51 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import News from '../views/News.vue';
+import Events from '../components/news/Events.vue';
+import Meetings from '../components/news/Meetings.vue';
+import Camps from '../components/news/Camps.vue';
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
         component: Home,
-        meta: { title: 'Головна' },
+        meta: {
+            title: 'Головна',
+        },
     },
     {
         path: '/news',
-        name: 'News',
         component: News,
-        meta: { title: 'Новини' },
+        children: [
+            {
+                path: '',
+                component: Events,
+                meta: {
+                    title: 'Події',
+                },
+            },
+            {
+                path: 'events',
+                component: Events,
+                meta: {
+                    title: 'Події',
+                },
+            },
+            {
+                path: 'meetings',
+                component: Meetings,
+                meta: {
+                    title: 'Збори',
+                },
+            },
+            {
+                path: 'camps',
+                component: Camps,
+                meta: {
+                    title: 'Табори',
+                },
+            },
+        ],
     },
     // {
     //     // path: '/about',
